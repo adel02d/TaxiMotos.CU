@@ -1,0 +1,30 @@
+services:
+  - type: worker
+    name: taximotos-bot
+    runtime: docker
+    repo: https://github.com/TU_USUARIO/TaxiMotos.CU
+    branch: main
+    dockerfilePath: ./Dockerfile.bot
+    plan: free
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DRIVER_GROUP_ID
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+
+  - type: web
+    name: taximotos-dashboard
+    runtime: docker
+    repo: https://github.com/TU_USUARIO/TaxiMotos.CU
+    branch: main
+    dockerfilePath: ./Dockerfile.dashboard
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: PORT
+        value: "10000"
