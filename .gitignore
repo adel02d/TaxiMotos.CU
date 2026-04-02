@@ -1,6 +1,10 @@
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
+node_modules/
+.next/
+.env
+.env.local
+*.db
+*.db-journal
+mini-services/telegram-bot/node_modules/
+mini-services/telegram-bot/dist/
+vercel/
+.DS_Store
